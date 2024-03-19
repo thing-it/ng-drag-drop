@@ -1,6 +1,7 @@
 import { Directive, ElementRef, HostListener, Input, Output, EventEmitter, OnInit, HostBinding, Renderer2, NgZone, OnDestroy } from '@angular/core';
 import { NgDragDropService } from '../services/ng-drag-drop.service';
 import { DomHelper } from '../shared/dom-helper';
+import { take } from 'rxjs/operators';
 
 @Directive({
     selector: '[draggable]'
@@ -58,6 +59,11 @@ export class Draggable implements OnInit, OnDestroy {
     get dragImage() {
         return this._dragImage;
     }
+
+    /**
+     * Element that will be used as drag ghost when being dragged.
+     */
+    @Input() dragTransitElement?: HTMLElement;
 
     /**
      * Defines if drag is enabled. `true` by default.
@@ -132,14 +138,6 @@ export class Draggable implements OnInit, OnDestroy {
     @HostListener('dragstart', ['$event'])
     dragStart(e) {
         if (this.allowDrag()) {
-
-            // This is a kludgy approach to apply CSS to the drag helper element when an image is being dragged.
-            DomHelper.addClass(this.el, this.dragTransitClass);
-            setTimeout(() => {
-                DomHelper.addClass(this.el, this.dragClass);
-                DomHelper.removeClass(this.el, this.dragTransitClass);
-            }, 10);
-
             this.ng2DragDropService.dragData = this.dragData;
             this.ng2DragDropService.scope = this.dragScope;
 
@@ -152,6 +150,30 @@ export class Draggable implements OnInit, OnDestroy {
             // Set dragImage
             if (this.dragImage) {
                 e.dataTransfer.setDragImage(this.dragImageElement, 0, 0);
+            } else if (this.dragTransitElement) {
+                const clone = this.dragTransitElement.cloneNode(true) as HTMLElement;
+                DomHelper.addClass(clone, this.dragTransitClass);
+                clone.style.position = 'absolute';
+                clone.style.top = '-1000px';
+                document.body.appendChild(clone);
+                
+                // calculate relative offsets depending on event offsets
+                var x = clone.offsetWidth / this.el.nativeElement.offsetWidth * e.offsetX;
+                var y = clone.offsetHeight / this.el.nativeElement.offsetHeight * e.offsetY;
+
+                e.dataTransfer.setDragImage(clone, x, y);
+
+                // remove clone from body on drag end
+                this.onDragEnd.pipe(take(1)).subscribe(() => {
+                    clone.remove();
+                });
+            } else {
+                // This is a kludgy approach to apply CSS to the drag helper element when an image is being dragged.
+                DomHelper.addClass(this.el, this.dragTransitClass);
+                setTimeout(() => {
+                    DomHelper.addClass(this.el, this.dragClass);
+                    DomHelper.removeClass(this.el, this.dragTransitClass);
+                }, 10);
             }
 
             e.stopPropagation();
