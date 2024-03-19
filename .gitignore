@@ -17,6 +17,7 @@ _temp
 *.ngfactory.json
 *.ngfactory.ts
 *.d.ts
+*.log
 
 !karma*.js
 !protractor*.js
