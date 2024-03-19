@@ -1,3 +1,7 @@
+## 5.1.1 (2024-03-19)
+Enhacements:
+- Added `dragTransitElement`
+
 ## 5.0.0 (2018-06-20)
 - Migrate to angular 6.0.1 and Rxjs 6.1.0 Pull Request ([#135](https://github.com/ObaidUrRehman/ng2-drag-drop/pull/135))
 

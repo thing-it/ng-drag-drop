@@ -1,6 +1,6 @@
 {
-  "name": "ng-drag-drop",
-  "version": "5.0.0",
+  "name": "@lucasg04/ng-drag-drop",
+  "version": "5.1.1",
   "description": "Drag & Drop for Angular - based on HTML5 with no external dependencies.",
   "main": "index.js",
   "typings": "index.d.ts",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ObaidUrRehman/ng-drag-drop.git"
+    "url": "git+https://github.com/LucasG04/ng-drag-drop.git"
   },
   "keywords": [
     "Angular2",
@@ -27,12 +27,12 @@
     "drop",
     "dragdrop"
   ],
-  "author": "Obaid ur Rehman <obaid.urrehman@gmail.com>",
+  "author": "Obaid ur Rehman <obaid.urrehman@gmail.com>, LucasG04",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ObaidUrRehman/ng-drag-drop/issues"
+    "url": "https://github.com/LucasG04/ng-drag-drop/issues"
   },
-  "homepage": "https://github.com/ObaidUrRehman/ng-drag-drop#readme",
+  "homepage": "https://github.com/LucasG04/ng-drag-drop#readme",
   "peerDependencies": {
     "@angular/common": ">=6.0.1",
     "@angular/core": ">=6.0.1"
