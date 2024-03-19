@@ -281,6 +281,7 @@ __Note:__ The steps are a bit involved at this time and will be simplified to an
 | `dragScope`   |    `string | Array<string>` | `'default'`   |  Defines compatible drag drop pairs. Values must match with `droppable.dropScope`. |
 | `dragClass` (previously `dragOverClass`) | `string` | `'drag-border'` | CSS class applied on the draggable that is applied when the item is being dragged. |
 | `dragTransitClass` | `string` | `'drag-transit'` | CSS class applied on the drag helper translucent element clone. |
+| `dragTransitElement` | `HTMLElement` | `undefined` | Element that will be used as drag ghost. |
 | `dragHandleClass`  | `string` | `'drag-handle'` | The CSS class applied to a draggable element. If a dragHandle is defined then its applied to that handle element only. By default it is used to change the mouse over pointer. |
 | `draghandle` | `string` | `null` | The selector that defines the drag Handle. If defined drag will only be allowed if dragged from the selector element. |
 | `dragImage` | `string` | `null` | The url to image that will be used as custom drag image when the draggable is being dragged. |
