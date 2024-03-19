@@ -1,9 +1,8 @@
 # Angular Drag & Drop
 
-## :warning: Discontinuation Notice
-Fork of discontinued npm package "ng-drag-drop".
-
 [![npm version](https://img.shields.io/npm/v/@lucasg04/ng-drag-drop.svg?style=flat-square)](https://www.npmjs.com/package/@lucasg04/ng-drag-drop)
+
+>Fork of discontinued npm package "ng-drag-drop".
 
 Drag & Drop for [Angular](http://angular.io), based on HTML5 with no external dependencies. Provides `draggable` & `droppable` directives. Features:
 * Transfer data from `draggable` to `droppable`.

@@ -1,4 +1,4 @@
-## 5.1.1 (2024-03-19)
+## 5.1.2 (2024-03-19)
 Enhacements:
 - Added `dragTransitElement`
 
