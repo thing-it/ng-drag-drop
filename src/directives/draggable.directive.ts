@@ -147,26 +147,12 @@ export class Draggable implements OnInit, OnDestroy {
                 e.dataTransfer.setData('text', '');
             }
 
+            this.setDragImageForEvent(e);
             // Set dragImage
             if (this.dragImage) {
                 e.dataTransfer.setDragImage(this.dragImageElement, 0, 0);
             } else if (this.dragTransitElement) {
-                const clone = this.dragTransitElement.cloneNode(true) as HTMLElement;
-                DomHelper.addClass(clone, this.dragTransitClass);
-                clone.style.position = 'absolute';
-                clone.style.top = '-1000px';
-                document.body.appendChild(clone);
-                
-                // calculate relative offsets depending on event offsets
-                var x = clone.offsetWidth / this.el.nativeElement.offsetWidth * e.offsetX;
-                var y = clone.offsetHeight / this.el.nativeElement.offsetHeight * e.offsetY;
-
-                e.dataTransfer.setDragImage(clone, x, y);
-
-                // remove clone from body on drag end
-                this.onDragEnd.pipe(take(1)).subscribe(() => {
-                    clone.remove();
-                });
+                this.setDragImageForEvent(e);
             } else {
                 // This is a kludgy approach to apply CSS to the drag helper element when an image is being dragged.
                 DomHelper.addClass(this.el, this.dragTransitClass);
@@ -239,6 +225,43 @@ export class Draggable implements OnInit, OnDestroy {
         }
 
         return dragElement;
+    }
+
+    /**
+     * Sets the drag image. For the image {@link dragImage} will be used first,
+     * {@link dragTransitElement} second and the current {@link el} as fallback.
+     * 
+     * For {@link dragTransitElement}. and {@link el} a clone will be appended to the documents
+     * body and will be removed again on drag end.
+     * 
+     * @param e The DragEvent
+     */
+    private setDragImageForEvent(e): void {
+        if (this.dragImage) {
+            e.dataTransfer.setDragImage(this.dragImageElement, 0, 0);
+            return;
+        }
+        
+        const elementForClone = this.dragTransitElement ? this.dragTransitElement : this.el.nativeElement;
+        // create element clone outside of viewport
+        const clone = elementForClone.cloneNode(true) as HTMLElement;
+        DomHelper.addClass(clone, this.dragTransitClass);
+        clone.style.position = 'absolute';
+        clone.style.top = '-1000px';
+        clone.style.height = `${elementForClone.height ? elementForClone.height : elementForClone.clientHeight}px`;
+        clone.style.width = `${elementForClone.width ? elementForClone.width : elementForClone.clientWidth}px`;
+        document.body.appendChild(clone);
+
+        // calculate relative offsets depending on event offsets
+        var x = clone.offsetWidth / this.el.nativeElement.offsetWidth * e.offsetX;
+        var y = clone.offsetHeight / this.el.nativeElement.offsetHeight * e.offsetY;
+
+        e.dataTransfer.setDragImage(clone, x, y);
+
+        // remove clone from body on drag end
+        this.onDragEnd.pipe(take(1)).subscribe(() => {
+            clone.remove();
+        });
     }
 
     unbindDragListeners() {

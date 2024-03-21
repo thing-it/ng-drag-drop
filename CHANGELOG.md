@@ -1,3 +1,7 @@
+## 5.2.0 (2024-03-21)
+Enhacements:
+- Improves transit images
+
 ## 5.1.2 (2024-03-19)
 Enhacements:
 - Added `dragTransitElement`

@@ -41,15 +41,13 @@ import {DropEvent} from 'ng-drag-drop';
 })
 export class SwapListComponent {
   list1 = [
-    {name: 'Toyota', imgSrc: 'https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/012015/toyota.png?itok=bE9KM53i'},
-    {name: 'Bugati', imgSrc: 'https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0002/7420/brand.gif?itok=mh2YN5jB'},
-    {name: 'Suzuki', imgSrc: 'https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/072020/logo_suzuki.png?ckDUi74NAcTu5w0ITFhpPHE_Nt6SC2zz&itok=aaz3mvwQ'}
+    {name: 'Toyota', imgSrc: './images/logo-toyota.png'},
+    {name: 'Suzuki', imgSrc: './images/logo-suzuki.png'}
   ];
 
   list2 = [
-    {name: 'Mercedes', imgSrc: 'https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/052018/mercedes_benz_2018.jpg?yquMxj91WRKdnxbjcdcRoQRLfGGcjORy&itok=uc7mrHj0'},
-    {name: 'Honda', imgSrc: 'https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/102022/honda.png?K2B5BE1GmXX23kaaODn7mHNP6C4spGvD&itok=sDfk9mvF'},
-    {name: 'BMW', imgSrc: 'https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/112022/e136c42d-d9b4-4ffe-a4a9-cae8aa162d10.png?YWryhRKQNYmaZOf5jiUgaTC5TPl6upmZ&itok=m80fSwUl'}
+    {name: 'Mercedes', imgSrc: './images/logo-mercedes-benz.jpg'},
+    {name: 'BMW', imgSrc: './images/logo-bmw.png'}
   ];
 
 
