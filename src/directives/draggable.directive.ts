@@ -148,19 +148,6 @@ export class Draggable implements OnInit, OnDestroy {
             }
 
             this.setDragImageForEvent(e);
-            // Set dragImage
-            if (this.dragImage) {
-                e.dataTransfer.setDragImage(this.dragImageElement, 0, 0);
-            } else if (this.dragTransitElement) {
-                this.setDragImageForEvent(e);
-            } else {
-                // This is a kludgy approach to apply CSS to the drag helper element when an image is being dragged.
-                DomHelper.addClass(this.el, this.dragTransitClass);
-                setTimeout(() => {
-                    DomHelper.addClass(this.el, this.dragClass);
-                    DomHelper.removeClass(this.el, this.dragTransitClass);
-                }, 10);
-            }
 
             e.stopPropagation();
             this.onDragStart.emit(e);
