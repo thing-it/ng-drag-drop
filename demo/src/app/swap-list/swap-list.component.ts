@@ -29,8 +29,6 @@ import {DropEvent} from 'ng-drag-drop';
     }
 
     .transit-element {
-      height: 50px;
-      width: 50px;
       display: none; // will be changed to "flex" via transit class
       visibility: hidden;
       align-items: center;

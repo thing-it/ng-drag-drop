@@ -13,7 +13,7 @@
                         <li draggable [dragScope]="'swap-target-2'" [dragClass]="'drag-over'" [dragData]="item" class="list-group-item" dragTransitClass="drag-transit" [dragTransitElement]="transitElement">
                             {{item.name}}
                         </li>
-                        <img #transitElement class="transit-element" [src]="item.imgSrc" height="50px" width="50px" />
+                        <img #transitElement class="transit-element" [src]="item.imgSrc" height="50px" width="50px" />    
                     </ng-container>
                 </ul>
             </div>
@@ -26,9 +26,12 @@
             <div class="card-header card-inverse card-primary">List 2</div>
             <div class="card-block scroll-list">
                 <ul class="list-group">
-                    <li draggable *ngFor="let item of list2" [dragScope]="'swap-target-1'" [dragClass]="'drag-over'" [dragData]="item" class="list-group-item">
-                        {{item.name}}
-                    </li>
+                    <ng-container *ngFor="let item of list2">
+                        <li draggable [dragScope]="'swap-target-1'" [dragClass]="'drag-over'" [dragData]="item" class="list-group-item" dragTransitClass="drag-transit" [dragTransitElement]="transitElement">
+                            {{item.name}}
+                        </li>
+                        <img #transitElement class="transit-element" [src]="item.imgSrc" />  
+                    </ng-container>
                 </ul>
             </div>
         </div>
