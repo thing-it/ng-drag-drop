@@ -1,3 +1,7 @@
+## 5.2.1 (2024-03-27)
+Fixes:
+- Dimensions of transit element clone not `0px`
+
 ## 5.2.0 (2024-03-21)
 Enhacements:
 - Improves transit images
