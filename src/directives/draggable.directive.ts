@@ -249,6 +249,8 @@ export class Draggable implements OnInit, OnDestroy {
         clone.style.position = 'absolute';
         clone.style.top = '-1000px';
         document.body.appendChild(clone);
+        clone.style.height = `${elementForClone.height ? elementForClone.height : elementForClone.offsetHeight}px`;	
+        clone.style.width = `${elementForClone.width ? elementForClone.width : elementForClone.offsetWidth}px`;
 
         // calculate relative offsets depending on event offsets
         var x = clone.offsetWidth / this.el.nativeElement.offsetWidth * e.offsetX;
@@ -257,7 +259,8 @@ export class Draggable implements OnInit, OnDestroy {
         e.dataTransfer.setDragImage(clone, x, y);
 
         // remove clone from body on drag end
-        this.onDragEnd.pipe(take(1)).subscribe(() => {
+        this.ng2DragDropService.onDragEnd.pipe(take(1)).subscribe(() => {
+            console.log('remove clone')
             clone.remove();
         });
     }
