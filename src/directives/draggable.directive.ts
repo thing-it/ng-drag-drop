@@ -248,8 +248,6 @@ export class Draggable implements OnInit, OnDestroy {
         DomHelper.addClass(clone, this.dragTransitClass);
         clone.style.position = 'absolute';
         clone.style.top = '-1000px';
-        clone.style.height = `${elementForClone.height ? elementForClone.height : elementForClone.clientHeight}px`;
-        clone.style.width = `${elementForClone.width ? elementForClone.width : elementForClone.clientWidth}px`;
         document.body.appendChild(clone);
 
         // calculate relative offsets depending on event offsets
