@@ -1,3 +1,8 @@
+## 5.2.2 (2024-03-27)
+Fixes:
+- Dimensions of transit element clone without fixed dimensions
+- Removing of clone after dropped in zone
+
 ## 5.2.1 (2024-03-27)
 Fixes:
 - Dimensions of transit element clone not `0px`
