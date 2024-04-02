@@ -1,3 +1,7 @@
+## 5.2.3 (2024-04-02)
+Fixes:
+- Fixes null dimensions for flexible clone element
+
 ## 5.2.2 (2024-03-27)
 Fixes:
 - Dimensions of transit element clone without fixed dimensions
