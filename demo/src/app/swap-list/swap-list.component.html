@@ -30,7 +30,9 @@
                         <li draggable [dragScope]="'swap-target-1'" [dragClass]="'drag-over'" [dragData]="item" class="list-group-item" dragTransitClass="drag-transit" [dragTransitElement]="transitElement">
                             {{item.name}}
                         </li>
-                        <img #transitElement class="transit-element" [src]="item.imgSrc" />  
+                        <div  #transitElement class="transit-element">
+                            <img [src]="item.imgSrc" />
+                        </div>
                     </ng-container>
                 </ul>
             </div>

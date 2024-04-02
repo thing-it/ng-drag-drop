@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Input, Output, EventEmitter, OnInit, HostBinding, Renderer2, NgZone, OnDestroy } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, Output, EventEmitter, OnInit, HostBinding, Renderer2, NgZone, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { NgDragDropService } from '../services/ng-drag-drop.service';
 import { DomHelper } from '../shared/dom-helper';
 import { take } from 'rxjs/operators';
@@ -123,8 +123,11 @@ export class Draggable implements OnInit, OnDestroy {
      */
     unbindDragListener: Function;
 
-    constructor(protected el: ElementRef, private renderer: Renderer2,
-        private ng2DragDropService: NgDragDropService, private zone: NgZone) {
+    constructor(
+        protected el: ElementRef,
+        private renderer: Renderer2,
+        private ng2DragDropService: NgDragDropService,
+        private zone: NgZone) {
     }
 
     ngOnInit() {
@@ -228,7 +231,7 @@ export class Draggable implements OnInit, OnDestroy {
             e.dataTransfer.setDragImage(this.dragImageElement, 0, 0);
             return;
         }
-        
+
         const elementForClone = this.dragTransitElement ? this.dragTransitElement : this.el.nativeElement;
         // create element clone outside of viewport
         const clone = elementForClone.cloneNode(true) as HTMLElement;
@@ -236,8 +239,15 @@ export class Draggable implements OnInit, OnDestroy {
         clone.style.position = 'absolute';
         clone.style.top = '-1000px';
         document.body.appendChild(clone);
-        clone.style.height = `${elementForClone.height ? elementForClone.height : elementForClone.offsetHeight}px`;	
-        clone.style.width = `${elementForClone.width ? elementForClone.width : elementForClone.offsetWidth}px`;
+
+        const height = elementForClone.height ? elementForClone.height : elementForClone.offsetHeight;
+        if (height && height > 0) {
+            clone.style.height = `${height}px`;
+        }
+        const width = elementForClone.width ? elementForClone.width : elementForClone.offsetWidth;
+        if (width && width > 0) {
+            clone.style.width = `${width}px`;
+        }
 
         // calculate relative offsets depending on event offsets
         var x = clone.offsetWidth / this.el.nativeElement.offsetWidth * e.offsetX;
@@ -247,7 +257,6 @@ export class Draggable implements OnInit, OnDestroy {
 
         // remove clone from body on drag end
         this.ng2DragDropService.onDragEnd.pipe(take(1)).subscribe(() => {
-            console.log('remove clone')
             clone.remove();
         });
     }
