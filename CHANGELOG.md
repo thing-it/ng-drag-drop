@@ -1,3 +1,7 @@
+## 5.2.4 (2024-04-09)
+Enhacements:
+- NgDragDopService is exported
+
 ## 5.2.3 (2024-04-02)
 Fixes:
 - Fixes null dimensions for flexible clone element
