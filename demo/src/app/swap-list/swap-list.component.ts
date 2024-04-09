@@ -48,7 +48,6 @@ export class SwapListComponent {
     {name: 'BMW', imgSrc: './images/logo-bmw.png'}
   ];
 
-
   onList1Drop(e: DropEvent) {
     this.list1.push(e.dragData);
     this.removeItem(e.dragData, this.list2)

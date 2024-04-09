@@ -16,15 +16,17 @@ import { NgDragDropModule } from 'ng-drag-drop';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, NgDragDropModule.forRoot()],
-  declarations: [DemoComponent,
-  CompleteDemoComponent,
-  SwapListComponent,
-  DeleteItemComponent,
-  DefaultCssComponent,
-  DragHelperComponent,
-  DropScopeFunctionDemoComponent,
-  PerformanceDemoComponent],
+  declarations: [
+    DemoComponent,
+    CompleteDemoComponent,
+    SwapListComponent,
+    DeleteItemComponent,
+    DefaultCssComponent,
+    DragHelperComponent,
+    DropScopeFunctionDemoComponent,
+    PerformanceDemoComponent
+  ],
   bootstrap: [DemoComponent],
   providers: []
 })
-export class AppModule {}
+export class AppModule { }
