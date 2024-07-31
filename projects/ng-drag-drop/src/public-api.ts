@@ -3,4 +3,5 @@
  */
 
 export * from './lib/ng-drag-drop.service';
-export * from './lib/ng-drag-drop.component';
+export * from './lib/directives/draggable.directive';
+export * from './lib/directives/droppable.directive';

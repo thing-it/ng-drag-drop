@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NgDragDropService {
-
-  constructor() { }
+  dragData: any;
+  scope?: string | Array<string>;
+  onDragStart = new Subject<void>();
+  onDragEnd = new Subject<void>();
 }
