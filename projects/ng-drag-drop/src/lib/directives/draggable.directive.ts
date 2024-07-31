@@ -17,7 +17,6 @@ import { DomHelper } from '../shared/dom-helper';
 
 @Directive({
   selector: '[draggable]',
-  standalone: true,
 })
 export class Draggable implements OnInit, OnDestroy {
   /**

@@ -17,7 +17,6 @@ import { DropEvent } from '../shared/drop-event.model';
 
 @Directive({
   selector: '[droppable]',
-  standalone: true,
 })
 export class Droppable implements OnInit, OnDestroy {
   /**
