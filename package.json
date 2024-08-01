@@ -3,10 +3,10 @@
   "version": "6.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start:demo": "ng serve demo",
+    "build:lib": "ng build ng-drag-drop",
+    "watch:lib": "ng build ng-drag-drop --watch",
+    "test:lib": "ng test ng-drag-drop"
   },
   "private": true,
   "dependencies": {
