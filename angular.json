@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-drag-drop": {
+    "@lucasg04/ng-drag-drop": {
       "projectType": "library",
       "root": "projects/ng-drag-drop",
       "sourceRoot": "projects/ng-drag-drop/src",
