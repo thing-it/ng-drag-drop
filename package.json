@@ -1,12 +1,23 @@
 {
   "name": "@lucasg04/ng-drag-drop",
-  "version": "6.0.0",
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start:demo": "ng serve demo",
-    "build:lib": "ng build ng-drag-drop",
-    "watch:lib": "ng build ng-drag-drop --watch",
-    "test:lib": "ng test ng-drag-drop"
+    "start": "npm-run-all clean --parallel lib:watch demo:start-waiton",
+    "build": "run-s lib:build demo:build",
+    "test": "run-p lib:test demo:test",
+    "test-coverage": "run-p lib:test-coverage demo:test-coverage",
+    "lib:build": "ng build ng-drag-drop",
+    "lib:watch": "ng build ng-drag-drop --watch --configuration development",
+    "lib:test": "ng test ng-drag-drop",
+    "lib:test-coverage": "ng test ng-drag-drop --no-watch --code-coverage",
+    "demo:start-waiton": "wait-on dist/ng-drag-drop/package.json && npm run demo:start",
+    "demo:start": "ng serve demo",
+    "demo:build": "ng build demo",
+    "demo:watch": "ng build demo --watch --configuration development",
+    "demo:test": "ng test demo",
+    "demo:test-coverage": "ng test demo --no-watch --code-coverage",
+    "clean": "rimraf dist"
   },
   "private": true,
   "dependencies": {
@@ -34,6 +45,9 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^18.1.0",
-    "typescript": "~5.5.2"
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^6.0.1",
+    "typescript": "~5.5.2",
+    "wait-on": "^7.2.0"
   }
 }
