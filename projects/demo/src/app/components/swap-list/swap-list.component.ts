@@ -38,13 +38,13 @@ import { DropEvent } from 'ng-drag-drop';
 })
 export class SwapListComponent {
   list1 = [
-    { name: 'Toyota', imgSrc: './images/logo-toyota.png' },
-    { name: 'Suzuki', imgSrc: './images/logo-suzuki.png' },
+    { name: 'Toyota', imgSrc: '/assets/logo-toyota.png' },
+    { name: 'Suzuki', imgSrc: '/assets/logo-suzuki.png' },
   ];
 
   list2 = [
-    { name: 'Mercedes', imgSrc: './images/logo-mercedes-benz.jpg' },
-    { name: 'BMW', imgSrc: './images/logo-bmw.png' },
+    { name: 'Mercedes', imgSrc: '/assets/logo-mercedes-benz.jpg' },
+    { name: 'BMW', imgSrc: '/assets/logo-bmw.png' },
   ];
 
   onList1Drop(e: DropEvent) {

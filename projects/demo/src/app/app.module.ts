@@ -10,10 +10,10 @@ import { PerformanceDemoComponent } from './components/performance-demo/performa
 import { SwapListComponent } from './components/swap-list/swap-list.component';
 import { NgDragDropModule } from 'ng-drag-drop';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
-    AppComponent,
     CompleteDemoComponent,
     DropScopeFunctionDemoComponent,
     SwapListComponent,
@@ -22,8 +22,17 @@ import { FormsModule } from '@angular/forms';
     DefaultCssComponent,
     PerformanceDemoComponent,
   ],
-  imports: [BrowserModule, FormsModule, NgDragDropModule],
+  imports: [CommonModule, FormsModule, NgDragDropModule],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [],
+  exports: [
+    CompleteDemoComponent,
+    DropScopeFunctionDemoComponent,
+    SwapListComponent,
+    DeleteItemComponent,
+    DragHelperComponent,
+    DefaultCssComponent,
+    PerformanceDemoComponent,
+  ],
 })
 export class AppModule {}

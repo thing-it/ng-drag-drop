@@ -215,7 +215,7 @@ Drag Handle can be defined for a `draggable` item which will restrict drag of th
 By default when an element is dragged, a translucent image is generated from the drag target. This image is generated automatically and varies with browser. A custom image can be used if desired. Pass the url of the image to `[dragImage]` on the `draggable` directive.
 
 ```html
-<li draggable [dragImage] = "'../../images/drag-helper.png'" >
+<li draggable [dragImage] = "'/assets/drag-helper.png'" >
    Not Draggable by list item but by the handle only.    
    <div class="pull-right"><i class="drag-handle fa fa-bars fa-lg" aria-hidden="true"></i></div> 
 </li>               
