@@ -29,7 +29,6 @@ import { DropEvent } from 'ng-drag-drop';
 
       .transit-element {
         display: none; // will be changed to "flex" via transit class
-        visibility: hidden;
         align-items: center;
         justify-content: center;
       }
@@ -58,11 +57,7 @@ export class SwapListComponent {
   }
 
   removeItem(item: any, list: Array<any>) {
-    let index = list
-      .map(function (e) {
-        return e.name;
-      })
-      .indexOf(item.name);
+    let index = list.map((e) => e.name).indexOf(item.name);
     list.splice(index, 1);
   }
 }
