@@ -1,3 +1,6 @@
+## 6.0.0 (2024-08-07)
+- Migrate to Angular 18 with support for Angular 16 - 18
+
 ## 5.2.4 (2024-04-09)
 Enhacements:
 - NgDragDopService is exported
