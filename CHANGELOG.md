@@ -1,3 +1,31 @@
+## 6.0.0 (2024-08-07)
+- Migrate to Angular 18 with support for Angular 16 - 18
+
+## 5.2.4 (2024-04-09)
+Enhacements:
+- NgDragDopService is exported
+
+## 5.2.3 (2024-04-02)
+Fixes:
+- Fixes null dimensions for flexible clone element
+
+## 5.2.2 (2024-03-27)
+Fixes:
+- Dimensions of transit element clone without fixed dimensions
+- Removing of clone after dropped in zone
+
+## 5.2.1 (2024-03-27)
+Fixes:
+- Dimensions of transit element clone not `0px`
+
+## 5.2.0 (2024-03-21)
+Enhacements:
+- Improves transit images
+
+## 5.1.2 (2024-03-19)
+Enhacements:
+- Added `dragTransitElement`
+
 ## 5.0.0 (2018-06-20)
 - Migrate to angular 6.0.1 and Rxjs 6.1.0 Pull Request ([#135](https://github.com/ObaidUrRehman/ng2-drag-drop/pull/135))
 
