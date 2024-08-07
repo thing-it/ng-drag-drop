@@ -26,7 +26,7 @@ Drag & Drop for [Angular](http://angular.io), based on HTML5 with no external de
 
 # Demo
 
-Check out the [Plunker demo](http://plnkr.co/edit/2bjGgzWnbFrciEiCKLew?p=preview).
+Check out the (old) [Plunker demo](http://plnkr.co/edit/2bjGgzWnbFrciEiCKLew?p=preview).
 
 The [demo folder](https://github.com/lucasg04/ng-drag-drop/tree/master/demo) of the repository contains the same demo as Plunkr that uses SystemJS. To run that demo do an `npm install` in that folder followed by `npm start` to serve the demo app.
 
