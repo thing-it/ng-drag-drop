@@ -1,6 +1,6 @@
 {
   "name": "@lucasg04/ng-drag-drop",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "Drag & Drop for Angular - based on HTML5 with no external dependencies.",
   "repository": {
     "type": "git",
@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/LucasG04/ng-drag-drop#readme",
   "peerDependencies": {
-    "@angular/core": ">=16.0.0 <19.0.0",
-    "@angular/common": ">=16.0.0 <19.0.0"
+    "@angular/core": ">=16.0.0",
+    "@angular/common": ">=16.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

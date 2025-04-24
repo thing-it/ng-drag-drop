@@ -4,9 +4,8 @@ import { Droppable } from './directives/droppable.directive';
 import { NgDragDropService } from './ng-drag-drop.service';
 
 @NgModule({
-  imports: [],
-  declarations: [Draggable, Droppable],
-  exports: [Draggable, Droppable],
-  providers: [NgDragDropService],
+    imports: [Draggable, Droppable],
+    exports: [Draggable, Droppable],
+    providers: [NgDragDropService],
 })
 export class NgDragDropModule {}

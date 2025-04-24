@@ -14,11 +14,11 @@
       [dragOverClass]="'drag-target-border'"
       [dragHintClass]="'drag-hint'"
       (onDrop)="onList1Drop($event)"
-    >
+      >
       <div class="card-header card-inverse card-primary">List 1</div>
       <div class="card-block scroll-list">
         <ul class="list-group">
-          <ng-container *ngFor="let item of list1">
+          @for (item of list1; track item) {
             <li
               draggable
               [dragScope]="'swap-target-2'"
@@ -27,7 +27,7 @@
               class="list-group-item"
               dragTransitClass="drag-transit"
               [dragTransitElement]="transitElement"
-            >
+              >
               {{ item.name }}
             </li>
             <img
@@ -36,8 +36,8 @@
               [src]="item.imgSrc"
               height="50px"
               width="50px"
-            />
-          </ng-container>
+              />
+          }
         </ul>
       </div>
     </div>
@@ -51,11 +51,11 @@
       [dragOverClass]="'drag-target-border'"
       [dragHintClass]="'drag-hint'"
       (onDrop)="onList2Drop($event)"
-    >
+      >
       <div class="card-header card-inverse card-primary">List 2</div>
       <div class="card-block scroll-list">
         <ul class="list-group">
-          <ng-container *ngFor="let item of list2">
+          @for (item of list2; track item) {
             <li
               draggable
               [dragScope]="'swap-target-1'"
@@ -64,13 +64,13 @@
               class="list-group-item"
               dragTransitClass="drag-transit"
               [dragTransitElement]="transitElement"
-            >
+              >
               {{ item.name }}
             </li>
             <div #transitElement class="transit-element">
               <img [src]="item.imgSrc" />
             </div>
-          </ng-container>
+          }
         </ul>
       </div>
     </div>

@@ -4,9 +4,10 @@ import { DropEvent } from 'ng-drag-drop';
 type Editor = { name: string };
 
 @Component({
-  selector: 'default-css',
-  templateUrl: './default-css.component.html',
-  styles: [],
+    selector: 'default-css',
+    templateUrl: './default-css.component.html',
+    styles: [],
+    standalone: false
 })
 export class DefaultCssComponent {
   list1: Editor[] = [
