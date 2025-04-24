@@ -15,10 +15,7 @@ import { take } from 'rxjs';
 import { NgDragDropService } from '../ng-drag-drop.service';
 import { DomHelper } from '../shared/dom-helper';
 
-@Directive({
-    selector: '[draggable]',
-    standalone: false
-})
+@Directive({ selector: '[draggable]' })
 export class Draggable implements OnInit, OnDestroy {
   /**
    * The data that will be avaliable to the droppable directive on its `onDrop()` event.

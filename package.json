@@ -13,7 +13,7 @@
     "lib:test": "ng test @lucasg04/ng-drag-drop",
     "lib:test-coverage": "ng test @lucasg04/ng-drag-drop --no-watch --code-coverage",
     "lib:publish": "npm publish ./dist/ng-drag-drop",
-    "demo:start-waiton": "wait-on dist/@lucasg04/ng-drag-drop/package.json && npm run demo:start",
+    "demo:start-waiton": "wait-on dist/ng-drag-drop/package.json && npm run demo:start",
     "demo:start": "ng serve demo",
     "demo:build": "ng build demo",
     "demo:watch": "ng build demo --watch --configuration development",
