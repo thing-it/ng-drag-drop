@@ -7,59 +7,65 @@
 </p>
 
 <pre>
-<code>
-isDropAllowedList = (dragData) => {{'{'}}
+  <code>
+    isDropAllowedList = (dragData) => {{'{'}}
     return dragData >= this.num;
-{{'}'}}
-</code>
+    {{'}'}}
+  </code>
 </pre>
 
 
 <hr>
 
-<div class="row">
-  <div class="col-sm-3">
-    <div class="card card-outline-primary mb-3">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="card card-outline-primary mb-3">
 
-      <div class="card-header card-inverse card-primary">Items</div>
-      <div class="card-block scroll-list">
-        <ul class="list-group">
-          <li draggable *ngFor="let item of list1" [dragScope]="'default-css'" [dragData]="item" class="list-group-item">
-            {{item}}
-          </li>
-        </ul>
+        <div class="card-header card-inverse card-primary">Items</div>
+        <div class="card-block scroll-list">
+          <ul class="list-group">
+            @for (item of list1; track item) {
+              <li draggable [dragScope]="'default-css'" [dragData]="item" class="list-group-item">
+                {{item}}
+              </li>
+            }
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="col-sm-3">
-    <div class="card card-outline-primary mb-3" droppable [dropScope]="isDropAllowedLessThan" (onDrop)="onDrop($event)">
-      <div class="card-header card-inverse card-primary">
-        <label for="inputNum1"> Drop items with value LESS than: </label>
-        <input type="text" [(ngModel)]="num1" class="form-control" id="inputNum1"></div>
-      <div class="card-block scroll-list">
-        <ul class="list-group">
-          <li *ngFor="let item of list2" class="list-group-item">
-            {{item}}
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
 
     <div class="col-sm-3">
-    <div class="card card-outline-primary mb-3" droppable [dropScope]="isDropAllowedGreaterThan" (onDrop)="onDropGreaterThan($event)">
-      <div class="card-header card-inverse card-primary">
-        <label for="inputNum1"> Drop items with value GREATER than: </label>
-        <input type="text" [(ngModel)]="num2" class="form-control" id="inputNum1"></div>
-      <div class="card-block scroll-list">
-        <ul class="list-group">
-          <li *ngFor="let item of list3" class="list-group-item">
-            {{item}}
-          </li>
-        </ul>
+      <div class="card card-outline-primary mb-3" droppable [dropScope]="isDropAllowedLessThan" (onDrop)="onDrop($event)">
+        <div class="card-header card-inverse card-primary">
+          <label for="inputNum1"> Drop items with value LESS than: </label>
+          <input type="text" [(ngModel)]="num1" class="form-control" id="inputNum1"></div>
+          <div class="card-block scroll-list">
+            <ul class="list-group">
+              @for (item of list2; track item) {
+                <li class="list-group-item">
+                  {{item}}
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-</div>
+      <div class="col-sm-3">
+        <div class="card card-outline-primary mb-3" droppable [dropScope]="isDropAllowedGreaterThan" (onDrop)="onDropGreaterThan($event)">
+          <div class="card-header card-inverse card-primary">
+            <label for="inputNum1"> Drop items with value GREATER than: </label>
+            <input type="text" [(ngModel)]="num2" class="form-control" id="inputNum1"></div>
+            <div class="card-block scroll-list">
+              <ul class="list-group">
+                @for (item of list3; track item) {
+                  <li class="list-group-item">
+                    {{item}}
+                  </li>
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>

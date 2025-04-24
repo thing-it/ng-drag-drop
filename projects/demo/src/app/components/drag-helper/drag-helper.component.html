@@ -11,16 +11,17 @@
       <div class="card-header card-inverse card-primary">Items</div>
       <div class="card-block scroll-list">
         <ul class="list-group">
-          <li
-            draggable
-            *ngFor="let item of list1"
-            [dragScope]="'drag-img'"
-            [dragData]="item"
-            [dragImage]="'/assets/drag-helper.png'"
-            class="list-group-item"
-          >
-            {{ item.name }}
-          </li>
+          @for (item of list1; track item) {
+            <li
+              draggable
+              [dragScope]="'drag-img'"
+              [dragData]="item"
+              [dragImage]="'/assets/drag-helper.png'"
+              class="list-group-item"
+              >
+              {{ item.name }}
+            </li>
+          }
         </ul>
       </div>
     </div>
@@ -32,13 +33,15 @@
       droppable
       [dropScope]="'drag-img'"
       (onDrop)="onDrop($event)"
-    >
+      >
       <div class="card-header card-inverse card-primary">Drop here</div>
       <div class="card-block scroll-list">
         <ul class="list-group">
-          <li *ngFor="let item of list2" class="list-group-item">
-            {{ item.name }}
-          </li>
+          @for (item of list2; track item) {
+            <li class="list-group-item">
+              {{ item.name }}
+            </li>
+          }
         </ul>
       </div>
     </div>
