@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { DropEvent } from 'ng-drag-drop';
 
 @Component({
-  selector: 'drop-scope-function-demo',
-  templateUrl: './drop-scope-function.component.html',
-  styles: [],
+    selector: 'drop-scope-function-demo',
+    templateUrl: './drop-scope-function.component.html',
+    styles: [],
+    standalone: false
 })
 export class DropScopeFunctionDemoComponent {
   list1: number[] = [10, 15, 50, 120, 150, 180, 200, 250];

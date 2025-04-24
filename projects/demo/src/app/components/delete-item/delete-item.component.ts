@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { DropEvent } from 'ng-drag-drop';
 
 @Component({
-  selector: 'delete-item',
-  templateUrl: './delete-item.component.html',
-  styles: [
-    `
+    selector: 'delete-item',
+    templateUrl: './delete-item.component.html',
+    styles: [
+        `
       div.scroll-list {
         overflow: auto;
         max-height: 70vh;
@@ -17,7 +17,8 @@ import { DropEvent } from 'ng-drag-drop';
         transform: scale(1.1);
       }
     `,
-  ],
+    ],
+    standalone: false
 })
 export class DeleteItemComponent {
   deleteItems = [

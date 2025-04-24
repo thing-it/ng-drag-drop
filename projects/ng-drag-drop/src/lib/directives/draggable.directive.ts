@@ -16,7 +16,8 @@ import { NgDragDropService } from '../ng-drag-drop.service';
 import { DomHelper } from '../shared/dom-helper';
 
 @Directive({
-  selector: '[draggable]',
+    selector: '[draggable]',
+    standalone: false
 })
 export class Draggable implements OnInit, OnDestroy {
   /**

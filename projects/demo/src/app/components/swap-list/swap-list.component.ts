@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { DropEvent } from 'ng-drag-drop';
 
 @Component({
-  selector: 'swap-list',
-  templateUrl: './swap-list.component.html',
-  styles: [
-    `
+    selector: 'swap-list',
+    templateUrl: './swap-list.component.html',
+    styles: [
+        `
       div.scroll-list {
         overflow: auto;
         max-height: 70vh;
@@ -33,7 +33,8 @@ import { DropEvent } from 'ng-drag-drop';
         justify-content: center;
       }
     `,
-  ],
+    ],
+    standalone: false
 })
 export class SwapListComponent {
   list1 = [

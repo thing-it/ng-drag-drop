@@ -4,9 +4,10 @@ import { DropEvent } from 'ng-drag-drop';
 type Phrase = { name: string };
 
 @Component({
-  selector: 'drag-helper',
-  templateUrl: './drag-helper.component.html',
-  styles: [],
+    selector: 'drag-helper',
+    templateUrl: './drag-helper.component.html',
+    styles: [],
+    standalone: false
 })
 export class DragHelperComponent {
   list1: Phrase[] = [

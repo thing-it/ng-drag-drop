@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { DropEvent } from 'ng-drag-drop';
 
 @Component({
-  selector: 'perf-demo',
-  templateUrl: './performance-demo.component.html',
-  styles: [
-    `
+    selector: 'perf-demo',
+    templateUrl: './performance-demo.component.html',
+    styles: [
+        `
       div.scroll-list {
         overflow: auto;
         max-height: 70vh;
@@ -25,7 +25,8 @@ import { DropEvent } from 'ng-drag-drop';
         border: #00bfff dashed 2px;
       }
     `,
-  ],
+    ],
+    standalone: false
 })
 export class PerformanceDemoComponent {
   list1 = this.getItems(2000);

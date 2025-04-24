@@ -16,7 +16,8 @@ import { NgDragDropService } from '../ng-drag-drop.service';
 import { DropEvent } from '../shared/drop-event.model';
 
 @Directive({
-  selector: '[droppable]',
+    selector: '[droppable]',
+    standalone: false
 })
 export class Droppable implements OnInit, OnDestroy {
   /**
