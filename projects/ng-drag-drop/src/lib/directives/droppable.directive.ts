@@ -15,7 +15,7 @@ import { Subscription, Observable, map, of } from 'rxjs';
 import { NgDragDropService } from '../ng-drag-drop.service';
 import { DropEvent } from '../shared/drop-event.model';
 
-@Directive({ selector: '[droppable]' })
+@Directive({ selector: '[droppable]', standalone: true })
 export class Droppable implements OnInit, OnDestroy {
   /**
    *  Event fired when Drag dragged element enters a valid drop target.
