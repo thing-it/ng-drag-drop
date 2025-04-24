@@ -1,3 +1,6 @@
+## 6.0.1 (2024-08-07)
+- Remove Angular version constraint for future versions
+
 ## 6.0.0 (2024-08-07)
 - Migrate to Angular 18 with support for Angular 16 - 18
 
