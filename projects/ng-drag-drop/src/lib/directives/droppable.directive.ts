@@ -11,7 +11,8 @@ import {
   Renderer2,
 } from '@angular/core';
 import { DomHelper } from '../shared/dom-helper';
-import { Subscription, Observable, map, of } from 'rxjs';
+import { Subscription, Observable,  of } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { NgDragDropService } from '../ng-drag-drop.service';
 import { DropEvent } from '../shared/drop-event.model';
 

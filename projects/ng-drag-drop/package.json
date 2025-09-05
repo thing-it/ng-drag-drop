@@ -1,5 +1,5 @@
 {
-  "name": "@lucasg04/ng-drag-drop",
+  "name": "@thing-it/ng-drag-drop",
   "version": "6.0.1",
   "description": "Drag & Drop for Angular - based on HTML5 with no external dependencies.",
   "repository": {

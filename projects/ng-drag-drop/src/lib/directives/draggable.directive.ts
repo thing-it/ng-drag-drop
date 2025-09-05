@@ -11,7 +11,7 @@ import {
   Output,
   Renderer2,
 } from '@angular/core';
-import { take } from 'rxjs';
+import { take } from 'rxjs/operators';
 import { NgDragDropService } from '../ng-drag-drop.service';
 import { DomHelper } from '../shared/dom-helper';
 

@@ -1,5 +1,5 @@
 {
-  "name": "@lucasg04/ng-drag-drop",
+  "name": "@thing-it/ng-drag-drop",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -31,7 +31,7 @@
     "@angular/platform-browser": "^19.2.8",
     "@angular/platform-browser-dynamic": "^19.2.8",
     "@angular/router": "^19.2.8",
-    "rxjs": "~7.8.0",
+    "rxjs": "6.6.7 ",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
